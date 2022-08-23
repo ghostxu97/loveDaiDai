@@ -22,7 +22,7 @@ def get_weather():
   url = "https://v0.yiketianqi.com/api?unescape=1&version=v91&appid=43656176&appsecret=I42og6Lm&ext=&cityid=&city=" + city
   res = requests.get(url).json()
   weather = res['data'][0]
-  return weather['wea'], math.floor(weather['tem1'], math.floor(weather['tem2'])
+  return weather['wea'], math.floor(weather['tem1']), math.floor(weather['tem2'])
 
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
