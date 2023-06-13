@@ -48,7 +48,7 @@ client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
 wea, temperature_max, temperature_min = get_weather()
-data = {"weather":{"value":wea},"temperature":{"value":temperature_min + "~" + temperature_max + "℃"},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"letter":{"value": "公众号模板规则改了调试中"}}
+data = {"weather":{"value":wea},"temperature":{"value":temperature_min + "~" + temperature_max + "℃"},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"letter":{"value": get_weather()}}
 res = wm.send_template(user_id, template_id, data)
 print(res)
 res = wm.send_template("ozt7455T6o7SIKhm2h49agvaQtbw", template_id, data)
