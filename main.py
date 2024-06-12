@@ -19,10 +19,10 @@ template_id = os.environ["TEMPLATE_ID"]
 
 
 def get_weather():
-  url = "https://v0.yiketianqi.com/api?unescape=1&version=v91&appid=76757174&appsecret=qB4A96Az&ext=&cityid=&city=" + city
+  url = "http://t.weather.sojson.com/api/weather/city/101020100"
   res = requests.get(url).json()
-  weather = res['data'][0]
-  return weather['wea'], weather['tem1'], weather['tem2']
+  weather = res['data']['forecast'][0]
+  return weather['type'], weather['high'], weather['low']
 
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
